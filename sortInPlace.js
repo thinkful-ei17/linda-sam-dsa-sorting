@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 Sort in place
 Write an algorithm to shuffle an array into a random order in-place (i.e. without creating a new array).
@@ -57,10 +59,11 @@ const checkArray =
 [5, 3, 2, 4],
 [5, 2, 4, 3]]
 
-const testShuffle = (array, number, testArray) => { 
+const testShuffle = (number, testArray) => { 
   let resultsArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   for( let i=0 ; i <number; i++) { 
-    let results = rShuffle(array)
+    let array = [2, 3, 4, 5];
+    let results = rShuffle(array);
     for(let j=0; j<testArray.length; j++){
       if(results.toString() === testArray[j].toString()){
         resultsArray[j] = resultsArray[j] + 1;
@@ -83,10 +86,10 @@ const testShuffle = (array, number, testArray) => {
 
 const rShuffle = (array) => {
   for(let i = 0; i < array.length; i++){
-    let randomIndex = getRandomInt(array.length); //0, 1, 2, 3; array.length is 4
-    swap(array, i, randomIndex); //picks random one, moves to first position, cycles through
+    let randomIndex = getRandomInt(array.length - i); //0, 1, 2, 3; array.length is 4
+    swap(array, i, randomIndex + i); //picks random one, moves to first position, cycles through
   }
-  return array
+  return array;
 }
 
 function getRandomInt(max) {
@@ -102,7 +105,7 @@ const swap = (array, i, j) => {
 
 //console.log(rShuffle([25, 30, 32, 72, 89]));
 //console.log(rShuffle([2, 3, 4, 5]));
-console.log(testShuffle([2, 3, 4, 5], 10, checkArray));
+console.log(testShuffle(24000, checkArray));
 
 
 //Commented out below based on discussion with Chris - can do this without recursion

@@ -1,8 +1,6 @@
 'use strict';
 
 const qSort = (array, start = 0, end = array.length) => {
-  // start = start;
-  // end = end;
   if (start >= end) {
     return array;
   }

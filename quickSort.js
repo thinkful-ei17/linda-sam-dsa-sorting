@@ -1,5 +1,10 @@
 'use strict';
 
+
+/*
+Write a function qSort that sorts a dataset using the quicksort algorithm. The dataset to to sort is
+*/
+
 let count = 0;
 
 const qSort = (array, start = 0, end = array.length) => {

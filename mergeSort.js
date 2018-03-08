@@ -1,5 +1,12 @@
 'use strict';
 
+/*
+MergeSort
+Write a function mSort that sorts the dataset above using the mergesort algorithm.
+
+Add functionality to both the qSort and mSort programs so that the programs shows how many operations it took to sort the same dataset
+*/
+
 let count = 0;
 const mSort = array => {
   if (array.length <= 1) {
